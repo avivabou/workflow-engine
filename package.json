@@ -1,0 +1,30 @@
+{
+  "name": "workflow-engine",
+  "version": "1.0.0",
+  "description": "A JavaScript project",
+  "main": "./dist/index.js",
+  "scripts": {
+    "dev:watch-backend": "node ./node_modules/parcel-bundler/bin/cli watch ./src/index.ts --target node --out-dir ./dist/",
+    "dev:watch-frontend": "node ./node_modules/parcel-bundler/bin/cli watch ./src/public/index.html --out-dir ./dist/public/",
+    "dev:hot-reload": "node ./node_modules/nodemon/bin/nodemon --watch ./dist/ ./dist/index.js",
+    "start": "node ./node_modules/npm-run-all/bin/npm-run-all -p -r dev:watch-backend dev:watch-frontend dev:hot-reload",
+    "build": "node ./node_modules/parcel-bundler/bin/cli build ./src/index.ts --target node --out-dir ./dist/",
+    "lint": "node ./node_modules/eslint/bin/eslint . --ext .js --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.30.0",
+    "nodemon": "^3.1.7",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.12.5",
+    "typescript": "^5.6.2"
+  }
+}
